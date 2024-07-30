@@ -13,9 +13,8 @@ jobs:
 
       - name: Configure Mercurial with MQ
         run: |
-          mkdir -p ~/.hgrc.d
-          echo '[extensions]' > ~/.hgrc.d/mq
-          echo 'mq =' >> ~/.hgrc.d/mq
+          echo '[extensions]' > ~/.hgrc
+          echo 'mq =' >> ~/.hgrc
 
       - name: Verify Mercurial installation and MQ extension
         run: |
