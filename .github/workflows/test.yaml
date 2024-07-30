@@ -10,6 +10,18 @@ jobs:
         java: [8]
     steps:
       - uses: actions/checkout@v3
+
+      - name: Configure Mercurial with MQ
+        run: |
+          mkdir -p ~/.hgrc.d
+          echo '[extensions]' > ~/.hgrc.d/mq
+          echo 'mq =' >> ~/.hgrc.d/mq
+
+      - name: Verify Mercurial installation and MQ extension
+        run: |
+          hg --version
+          hg help extensions
+
       - name: Setup java
         uses: actions/setup-java@v3
         with:
