@@ -30,4 +30,5 @@ jobs:
       - name: Build with gradle
         run: |
           ./gradlew patch
+          sed -i 's/^SUPPORTED_OS_VERSION = 2.4% 2.5% 2.6% 3% 4%/SUPPORTED_OS_VERSION = 2.4% 2.5% 2.6% 3% 4% 5%/' hotspot/make/linux/Makefile
           ./gradlew compileFastdebug
