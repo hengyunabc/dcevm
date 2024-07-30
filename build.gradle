@@ -72,7 +72,7 @@ project('hotspot') {
         }
     }
 
-    task patch(description: 'Patch HotSpot sources', dependsOn: init) {
+    task patch(description: 'Patch HotSpot sources', dependsOn: pull) {
 
         doLast {
             exec {
