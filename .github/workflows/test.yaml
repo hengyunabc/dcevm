@@ -15,6 +15,6 @@ jobs:
         with:
           java-version: ${{ matrix.java }}
           distribution: "zulu"
-          cache: "maven"
+          # cache: "maven"
       - name: Build with gradle
         run: ./gradlew patch
