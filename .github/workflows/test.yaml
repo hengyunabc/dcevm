@@ -19,6 +19,7 @@ jobs:
       - name: Install gcc 4.8
         run: |
           sudo apt update
+          sudo apt-get install libmpfr4
           wget https://mirrors.edge.kernel.org/ubuntu/pool/universe/g/gcc-4.9/g++-4.9_4.9.3-13ubuntu2_amd64.deb
           wget https://mirrors.edge.kernel.org/ubuntu/pool/universe/g/gcc-4.9/libstdc++-4.9-dev_4.9.3-13ubuntu2_amd64.deb
           wget https://mirrors.edge.kernel.org/ubuntu/pool/universe/g/gcc-4.9/gcc-4.9-base_4.9.3-13ubuntu2_amd64.deb
