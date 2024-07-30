@@ -52,7 +52,7 @@ jobs:
           ./gradlew patch
           sed -i 's/^SUPPORTED_OS_VERSION = 2.4% 2.5% 2.6% 3% 4%/SUPPORTED_OS_VERSION = 2.4% 2.5% 2.6% 3% 4% 5%/' hotspot/make/linux/Makefile
           sed -i 's/WARNINGS_ARE_ERRORS = -Werror/WARNINGS_ARE_ERRORS = -Wno-error/' hotspot/make/linux/makefiles/gcc.make
-          ./gradlew compileProduct
+          ./gradlew compileProduct 
           cd hotspot
           make -C make OPENJDK=true HOTSPOT_BUILD_VERSION=dcevmlight-dev ARCH_DATA_MODEL=64 ALT_BOOTDIR=$JAVA_HOME COMPILER_WARNINGS_FATAL=false HOTSPOT_BUILD_JOBS=1 ENABLE_FULL_DEBUG_SYMBOLS=1 STRIP_POLICY=no_strip ZIP_DEBUGINFO_FILES=0 fastdebug
           ./gradlew compileProduct
