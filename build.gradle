@@ -64,7 +64,7 @@ project('hotspot') {
         doLast {
             def hotspotRepository = hotspotTag.contains('jdk7') ?
                     'http://hg.openjdk.java.net/jdk7u/jdk7u/hotspot' :
-                    'http://hg.openjdk.java.net/jdk8u/jdk8u/hotspot'
+                    'https://hg.openjdk.org/jdk8u/jdk8u/hotspot'
             exec {
                 executable 'hg'
                 args 'pull', hotspotRepository
@@ -72,7 +72,7 @@ project('hotspot') {
         }
     }
 
-    task patch(description: 'Patch HotSpot sources', dependsOn: pull) {
+    task patch(description: 'Patch HotSpot sources', dependsOn: init) {
 
         doLast {
             exec {
