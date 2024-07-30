@@ -16,10 +16,10 @@ jobs:
           echo '[extensions]' > ~/.hgrc
           echo 'mq =' >> ~/.hgrc
 
-      - name: Verify Mercurial installation and MQ extension
-        run: |
-          hg --version
-          hg help extensions
+      # - name: Verify Mercurial installation and MQ extension
+      #   run: |
+      #     hg --version
+      #     hg help extensions
 
       - name: Setup java
         uses: actions/setup-java@v3
@@ -29,5 +29,5 @@ jobs:
           # cache: "maven"
       - name: Build with gradle
         run: |
-          hg help extensions
           ./gradlew patch
+          ./gradlew compileFastdebug
